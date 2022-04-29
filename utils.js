@@ -1,12 +1,18 @@
 export const add = (a, b) => {
+  if (typeof a !== 'number' || typeof b !== 'number')
+    throw new Error('Ooops....please give me numbeeeers');
   return a + b;
 };
 
 export const substract = (a, b) => {
+  if (typeof a !== 'number' || typeof b !== 'number')
+    throw new Error('Ooops....please give me numbeeeers');
   return a - b;
 };
 
 export const multiply = (a, b) => {
+  if (typeof a !== 'number' || typeof b !== 'number')
+    throw new Error('Ooops....please give me numbeeeers');
   return a * b;
 };
 

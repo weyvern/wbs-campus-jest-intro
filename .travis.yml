@@ -7,6 +7,8 @@ cache:
 script:
   - npm install
   - npm test
+before_deploy:
+  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
 deploy:
   provider: heroku
   api_key: Qi0fmII6LUeYX08zIjvqVK5jX4zS6HB29mAn9wZjF/NWRjOdDCpAzAy/XmdNn3wHbxw1wqJ3x7Xu1IURcBMD+wCP78Fdrl1EcJ4GbBlqDWyrlIamSIoQtQfYB0cVJ2gRGoOxjvsIc99pb4HjB8X/JjzTES+LcsMjqp1l/dDYKldU3hbDxqHOORO0/j3QaNZqZIZr13kzuiFEJRGTtQFmR29yKRpBZSQVWVKag/PCpMr4n9h5QtD78sx45IA3h+6I+Me17ZgTPbYyXYU2G22UHW51XSauOdVAA7n85rjDBfDcWkm6pJHdMphl6XQT8cggMyZ/GZvJ8bShhsTHmF0gugrnYVU/vBEx0rKFmRI3HYZrzW+Eg6xnjEOLTQMOuw3XoW7F4I+pm0UYJrxNIPe05ke8FO+XSSxdUYnt80tFkis+KS9JfvdYRF55Kzn0h+s93tiLoT2dvWyESvT7v2byOwspQ6DXBvvctPtkbi4qKq6Q/ypWQt9WxY1U9fuMrp+6CmcLETaV989Uw4LcL+8DRnC9T1IF0RdVpdYEGudV0/laM2Ob/IK/ISzrD4yETRDPa5UgQmfHAa+7ifa9/HKcq2U1+cVJOgNZKfhEZn7vcDCZFu4vecUI07qkumjbykAWXtC525jOxYwVrLsUK9/Havrib/0qctrZdumTWzMAlVs=

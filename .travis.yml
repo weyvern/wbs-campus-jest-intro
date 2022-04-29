@@ -1,17 +1,17 @@
 language: node_js
 node_js:
-- lts/*
+  - lts/*
 cache:
   directories:
-  - node_modules
+    - node_modules
 script:
-- npm install
-- npm test
+  - npm install
+  - npm test
 before_deploy:
-- rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
+  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
 deploy:
   provider: heroku
   api_key:
     secure: nStyz1uU+IyQwd6wr2cJrcU99PvhlkGEtCPpCPi7o1+zJaIF4xgKN+QlqG++pOdqHmekkidRdXIkOns8mAUlKOBonkkU9IDFu3q25hmQ/cOHK1boA5SI28LlbqJfqACsq35bQZgzbD4TaH2t8sHqEq43JzwBoGsrrxgjJHteymWTZuQ17lERT3a4Ivz7x7HR/ydCjTu1op/E2nVB5HQC1wc/OcM6/P3KY50ZTwXz5MuOcqiZscCOU5dGPRs1tB9xSQ1Ws8Dih4EKyLxFl9//eYFsBaEIFHYi6WsKhyoU//W246lJVXJ6w8wwdg5f62Mw7dZMSPpeenr4BLrtuTuj07M36SnPcI8o0byEMu79pC1JnEDSOP2XIrPYjjE4dVi9bRsqHTwwIcGNyknV1pqe2/CGCZFFwF97eSJDUIuVO6dyitFQrjAMUmlmHJRpHzvlBNyq5NuWz5inQ6GPyZZfKCGRWlARml1liaYQgpJHh+4RLEgq17fQyCVFt3TJQp9Eg5Kh4/UT0Apgk1V0jhRO1JlHBRZ7bfA5Xxok5YLr6EDaQkkyPg2WGDObB9iBg1yLx5EtMHLH2tNXbRgps0XYgwUQbQH6bX/66gP3/RN4gahz7OzKJCiQCCu2u2KXnG0SweBFwCDXh0JDxePRQl5+r0NeVlmnJGNpS4yEc5JWlHk=
-  app: wbs-travis-test
+  app: wbs-travis-intro
   on: main
